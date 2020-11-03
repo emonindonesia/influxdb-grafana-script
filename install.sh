@@ -15,16 +15,10 @@ echo " "
 echo "Installing Grafana..."
 
 WANIP=`dig @resolver1.opendns.com A myip.opendns.com +short -4`
-echo $WANIP
-echo "==       From eMonIndonesia        =="
-var1="        URL: http://" 
-var2=":8086" 
-read  -rd '' WANIP <<< "$WANIP"
-echo $var1 $WANIP $var2 
+var1="Step 1: Point your browser to http://" 
+var2=":3000" 
+#read  -rd '' WANIP <<< "$WANIP"
 echo $var1$WANIP$var2 
-
-echo "|$WANIP|"
-echo "== Grafana & InfluxDB Installation =="
 
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
@@ -77,14 +71,15 @@ echo " "
 echo "======================="
 echo "How to setup Grafana..."
 echo "======================="
-echo "Step 1: Point your browser to http://<your-ip>:3000"
+#echo "Step 1: Point your browser to http://<your-ip>:3000"
+echo $var1$WANIP$var2 
 echo "Step 2: Log in with the default Grafana" 
 echo "        user: admin"
 echo "        pass: admin"
 echo "Step 3: Change default Grafana login"
 echo "Step 4: Add data source, choose InfluxDB"
 echo "step 5: Set HTTP"
-echo "        URL: http://$WANIP:8086"
+echo "        URL: http://localhost:8086"
 echo "Step 6: Set InfluxDB Details..."
 echo "        Database: $dbname"
 echo "        User: $usrname"
