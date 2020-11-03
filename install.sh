@@ -16,6 +16,11 @@ echo "Installing Grafana..."
 
 wanip4='dig @resolver1.opendns.com A myip.opendns.com +short -4'
 echo $wanip4
+echo $ wanip4
+echo $wanip4
+
+test= 'wget -qO- ipinfo.io/ip'
+echo $test
 
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
