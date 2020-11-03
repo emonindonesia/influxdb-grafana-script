@@ -21,8 +21,10 @@ var1="        URL: http://"
 var2=":8086" 
 read  -rd '' WANIP <<< "$WANIP"
 echo $var1 $WANIP $var2 
+echo $var1$WANIP$var2 
 
-echo "==       From eMonIndonesia        ==$WANIP|"
+echo "|$WANIP|"
+echo "== Grafana & InfluxDB Installation =="
 
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
