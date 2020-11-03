@@ -17,14 +17,9 @@ echo "Installing Grafana..."
 WANIP=`dig @resolver1.opendns.com A myip.opendns.com +short -4`
 echo $WANIP
 echo "==       From eMonIndonesia        =="
-echo $ WANIP
-echo $WANIP
-
-TEST= 'wget -qO- ipinfo.io/ip'
-echo $TEST
-
-TEST=`pwd`
-echo $TEST
+var1="        URL: http://" 
+var2=":8086" 
+echo $var1 $WANIP $var2 
 
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
@@ -75,10 +70,6 @@ echo "...DONE!"
 #curl -s http://whatismyip.akamai.com/
 #wget -qO- ipinfo.io/ip
 
-
-
-
-
 echo " "
 echo "======================="
 echo "How to setup Grafana..."
@@ -90,7 +81,7 @@ echo "        pass: admin"
 echo "Step 3: Change default Grafana login"
 echo "Step 4: Add data source, choose InfluxDB"
 echo "step 5: Set HTTP"
-echo "        URL: http://<your-ip>:8086"
+echo "        URL: http://$WANIP:8086"
 echo "Step 6: Set InfluxDB Details..."
 echo "        Database: $dbname"
 echo "        User: $usrname"
