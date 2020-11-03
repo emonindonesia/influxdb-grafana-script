@@ -14,13 +14,16 @@ echo "====================================="
 echo " "
 echo "Installing Grafana..."
 
-WANIP='dig @resolver1.opendns.com A myip.opendns.com +short -4'
+WANIP=`dig @resolver1.opendns.com A myip.opendns.com +short -4`
 echo $WANIP
-echo "== hello"
+echo "==       From eMonIndonesia        =="
 echo $ WANIP
 echo $WANIP
 
 TEST= 'wget -qO- ipinfo.io/ip'
+echo $TEST
+
+TEST=`pwd`
 echo $TEST
 
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
