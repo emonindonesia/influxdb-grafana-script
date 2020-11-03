@@ -16,6 +16,7 @@ echo "Installing Grafana..."
 
 wanip4='dig @resolver1.opendns.com A myip.opendns.com +short -4'
 echo $wanip4
+echo "== hello"
 echo $ wanip4
 echo $wanip4
 
